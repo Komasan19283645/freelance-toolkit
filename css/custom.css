@@ -1,0 +1,77 @@
+/* Estilos personalizados y reglas de impresión para FreelanceToolkit */
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.ad-slot-placeholder {
+  min-height: 80px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(243, 244, 246, 0.7),
+    rgba(243, 244, 246, 0.7) 10px,
+    rgba(249, 250, 251, 0.7) 10px,
+    rgba(249, 250, 251, 0.7) 20px
+  );
+  border: 1px dashed #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media print {
+  header,
+  footer,
+  nav,
+  .no-print,
+  .ad-slot,
+  #controls-panel,
+  .btn-action {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  #printable-document {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 20mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+    display: block !important;
+  }
+
+  .print-break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+}

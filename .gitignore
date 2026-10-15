@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary base64 files
+*.b64.txt
+
+# Local environments
+.env
+.venv
+env/
+venv/
