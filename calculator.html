@@ -7,106 +7,196 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/custom.css">
 </head>
-<body class="h-full flex flex-col font-sans text-slate-800 antialiased">
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+<body class="h-full flex flex-col font-sans text-slate-800 antialiased bg-slate-50">
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="index.html" class="flex items-center space-x-3">
-          <div class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-black text-lg">FT</div>
-          <span class="text-lg font-bold text-slate-900">Freelance<span class="text-indigo-600">Toolkit</span></span>
+          <div class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-black text-lg shadow-md shadow-indigo-200">FT</div>
+          <span class="text-lg font-bold text-slate-900 tracking-tight">Freelance<span class="text-indigo-600">Toolkit</span></span>
         </a>
         <nav class="hidden md:flex space-x-1">
-          <a href="index.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg">Facturación</a>
-          <a href="store.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg">Plantillas Pro</a>
-          <a href="contracts.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg">Contratos & NDAs</a>
+          <a href="index.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">Facturación</a>
+          <a href="store.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">Plantillas Pro</a>
+          <a href="contracts.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">Contratos & NDAs</a>
           <a href="calculator.html" class="px-3.5 py-2 text-sm font-semibold rounded-lg bg-indigo-50 text-indigo-700">Calculadora de Tarifa</a>
         </nav>
-        <a href="store.html" class="text-xs font-semibold px-3.5 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700">Ver Plantillas</a>
+        <a href="store.html" class="text-xs font-semibold px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm transition-all hover:shadow">Ver Plantillas</a>
       </div>
     </div>
   </header>
 
   <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
     <div class="text-center max-w-2xl mx-auto mb-10">
-      <h1 class="text-3xl font-extrabold text-slate-900">Calculadora de Tarifa Freelance</h1>
-      <p class="mt-2 text-sm text-slate-600">Calcula cuánto cobrar por hora y por día para cubrir gastos, impuestos y tus vacaciones.</p>
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 mb-3">
+        <span>⚡</span> Herramienta 100% gratuita para autónomos
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Calculadora de Tarifa Freelance</h1>
+      <p class="mt-2 text-sm sm:text-base text-slate-600">Calcula exactamente cuánto cobrar por hora y por día para cubrir gastos reales, impuestos y vacaciones pagadas.</p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <div id="calculator-form" class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-5">
-        <h2 class="text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">Tus Objetivos y Gastos</h2>
+      <!-- PANEL DE FORMULARIO -->
+      <div id="calculator-form" class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <h2 class="text-base font-bold text-slate-900">1. Tus Parámetros Económicos</h2>
+          <span class="text-xs text-slate-500 font-medium">Actualización en tiempo real</span>
+        </div>
+
+        <!-- Sueldo Neto -->
         <div>
-          <label class="block text-xs font-semibold text-slate-700 mb-1">Sueldo neto mensual deseado (€)</label>
-          <input type="number" id="calc-desired-net" value="2200" step="50" class="w-full text-base font-semibold rounded-lg border-slate-200 p-2.5">
+          <div class="flex justify-between items-center mb-1.5">
+            <label for="calc-desired-net" class="text-xs font-bold text-slate-700">Sueldo neto mensual deseado</label>
+            <span class="text-[11px] text-slate-400">Lo que te llevas limpio al banco</span>
+          </div>
+          <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+            <input type="number" id="calc-desired-net" value="2200" step="50" class="w-full rounded-xl border-0 py-3 pl-4 pr-16 text-slate-900 font-bold text-base focus:ring-0 focus:outline-none">
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
+              <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">€ / mes</span>
+            </div>
+          </div>
         </div>
+
+        <!-- Gastos Fijos -->
         <div>
-          <label class="block text-xs font-semibold text-slate-700 mb-1">Gastos fijos mensuales del negocio (€)</label>
-          <input type="number" id="calc-monthly-expenses" value="550" step="20" class="w-full text-base font-semibold rounded-lg border-slate-200 p-2.5">
-        </div>
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-1">% IRPF Estimado</label>
-            <input type="number" id="calc-tax-rate" value="20" class="w-full text-xs rounded-lg border-slate-200 p-2">
+          <div class="flex justify-between items-center mb-1.5">
+            <label for="calc-monthly-expenses" class="text-xs font-bold text-slate-700">Gastos fijos mensuales del negocio</label>
+            <span class="text-[11px] text-slate-400">Cuota autónomo, gestor, software, internet...</span>
           </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-1">Semanas vacaciones/año</label>
-            <input type="number" id="calc-vacation-weeks" value="4" class="w-full text-xs rounded-lg border-slate-200 p-2">
+          <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+            <input type="number" id="calc-monthly-expenses" value="550" step="20" class="w-full rounded-xl border-0 py-3 pl-4 pr-16 text-slate-900 font-bold text-base focus:ring-0 focus:outline-none">
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
+              <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">€ / mes</span>
+            </div>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-3">
+
+        <!-- IRPF y Vacaciones -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-1">Horas laborables/día</label>
-            <input type="number" id="calc-hours-day" value="8" class="w-full text-xs rounded-lg border-slate-200 p-2">
+            <label for="calc-tax-rate" class="block text-xs font-bold text-slate-700 mb-1.5">% IRPF Estimado</label>
+            <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+              <input type="number" id="calc-tax-rate" value="20" min="0" max="50" class="w-full rounded-xl border-0 py-2.5 pl-4 pr-10 text-slate-900 font-bold text-sm focus:ring-0 focus:outline-none">
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                <span class="text-xs font-semibold text-slate-400">%</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Normalmente 15% o 20%</p>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-1">% Horas Facturables</label>
-            <input type="number" id="calc-billable-ratio" value="65" class="w-full text-xs rounded-lg border-slate-200 p-2">
+            <label for="calc-vacation-weeks" class="block text-xs font-bold text-slate-700 mb-1.5">Semanas descanso / año</label>
+            <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+              <input type="number" id="calc-vacation-weeks" value="4" min="0" max="20" class="w-full rounded-xl border-0 py-2.5 pl-4 pr-16 text-slate-900 font-bold text-sm focus:ring-0 focus:outline-none">
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                <span class="text-xs font-semibold text-slate-400">semanas</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Vacaciones, festivos y bajas</p>
+          </div>
+        </div>
+
+        <!-- Horas y Ratio Facturable -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="calc-hours-day" class="block text-xs font-bold text-slate-700 mb-1.5">Horas laborables / día</label>
+            <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+              <input type="number" id="calc-hours-day" value="8" min="1" max="16" class="w-full rounded-xl border-0 py-2.5 pl-4 pr-16 text-slate-900 font-bold text-sm focus:ring-0 focus:outline-none">
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                <span class="text-xs font-semibold text-slate-400">h / día</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Tiempo total que trabajas</p>
+          </div>
+          <div>
+            <label for="calc-billable-ratio" class="block text-xs font-bold text-slate-700 mb-1.5">% Horas Facturables</label>
+            <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+              <input type="number" id="calc-billable-ratio" value="65" min="10" max="100" class="w-full rounded-xl border-0 py-2.5 pl-4 pr-10 text-slate-900 font-bold text-sm focus:ring-0 focus:outline-none">
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                <span class="text-xs font-semibold text-slate-400">%</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">El resto es gestión, ventas y mails</p>
           </div>
         </div>
       </div>
 
-      <div class="lg:col-span-6 space-y-6">
-        <div class="bg-gradient-to-br from-indigo-900 to-slate-900 text-white p-8 rounded-2xl shadow-xl space-y-5">
-          <span class="text-xs font-bold uppercase tracking-wider text-indigo-300">Tarifa Mínima Recomendada</span>
-          <div>
-            <p class="text-xs text-indigo-200">Tarifa por Hora (sin IVA)</p>
-            <p id="res-hourly-rate" class="text-4xl sm:text-5xl font-black text-white mt-1">0.00 €</p>
+      <!-- PANEL DE RESULTADOS -->
+      <div class="lg:col-span-5 space-y-5">
+        <div class="bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 text-white p-7 sm:p-8 rounded-2xl shadow-xl border border-indigo-800/50 space-y-6">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-300 bg-indigo-950/80 px-2.5 py-1 rounded-full border border-indigo-700/50">Tu tarifa mínima recomendada</span>
+            <span class="text-emerald-400 text-xs font-semibold flex items-center gap-1">● Sin pérdidas</span>
           </div>
-          <div class="pt-4 border-t border-indigo-800 text-xs">
-            <p class="text-indigo-200">Tarifa por Día Completo: <span id="res-day-rate" class="font-bold text-white text-base ml-1">0.00 €</span></p>
-            <p class="text-indigo-200 mt-1">Facturación bruta mensual necesaria: <span id="res-monthly-gross" class="font-bold text-white ml-1">0 €</span></p>
+
+          <!-- Tarifa Hora -->
+          <div>
+            <p class="text-xs font-medium text-indigo-200">Tarifa por Hora (sin IVA)</p>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span id="res-hourly-rate" class="text-4xl sm:text-5xl font-black text-white tracking-tight">27.35 €</span>
+              <span class="text-sm font-semibold text-indigo-300">/ hora</span>
+            </div>
+          </div>
+
+          <!-- Métricas Clave -->
+          <div class="grid grid-cols-2 gap-3 pt-5 border-t border-indigo-800/70">
+            <div class="bg-white/5 p-3 rounded-xl border border-white/10">
+              <p class="text-[11px] text-indigo-200 font-medium">Tarifa por Día (Jornada)</p>
+              <p id="res-day-rate" class="text-xl font-bold text-white mt-0.5">142.22 €</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-xl border border-white/10">
+              <p class="text-[11px] text-indigo-200 font-medium">Facturación Bruta Mes</p>
+              <p id="res-monthly-gross" class="text-xl font-bold text-white mt-0.5">3.438 €</p>
+            </div>
+          </div>
+
+          <div class="text-[11px] text-indigo-200/80 leading-relaxed bg-indigo-950/40 p-3 rounded-xl border border-indigo-800/40">
+            📌 Si cobras menos de <strong id="res-hourly-pill" class="text-indigo-200 font-bold">27.35 €/h</strong>, no llegarás a tu sueldo deseado de <strong id="res-net-pill" class="text-white">2.200 €</strong> tras pagar IRPF y los gastos del negocio.
           </div>
         </div>
 
-        <div class="p-4 bg-indigo-50 border border-indigo-200 rounded-xl text-xs text-indigo-900">
-          💡 Para no calcular esto a mano cada mes, échale un ojo al <a href="store.html" class="underline font-bold text-indigo-700">Freelance Finance Hub (9 €)</a>, que te lo gestiona en automático.
+        <!-- Banner Upgrade -->
+        <div class="p-5 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200/80 rounded-2xl shadow-sm text-xs text-indigo-950 space-y-2">
+          <div class="flex items-center gap-2 font-bold text-indigo-900 text-sm">
+            <span>📊</span> ¿Quieres automatizar tu gestión mensual?
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            El <a href="store.html" class="underline font-bold text-indigo-700 hover:text-indigo-800">Freelance Finance Hub (9 €)</a> incluye este cálculo, tu control de facturas, deducciones de IVA/IRPF y estimación trimestral del Modelo 130 y 303 en una sola hoja.
+          </p>
+          <a href="store.html" class="inline-flex items-center text-xs font-bold text-indigo-600 hover:text-indigo-800 pt-1">
+            Ver todas las plantillas disponibles &rarr;
+          </a>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
-    <p>FreelanceToolkit &copy; 2026.</p>
+  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500 mt-auto">
+    <p>FreelanceToolkit &copy; 2026. Herramientas y recursos prácticos para profesionales independientes.</p>
   </footer>
 
   <script>
     function calculate() {
-      const net = parseFloat(document.getElementById("calc-desired-net").value) || 2000;
-      const exp = parseFloat(document.getElementById("calc-monthly-expenses").value) || 500;
-      const tax = (parseFloat(document.getElementById("calc-tax-rate").value) || 20) / 100;
-      const vac = parseFloat(document.getElementById("calc-vacation-weeks").value) || 4;
-      const hDay = parseFloat(document.getElementById("calc-hours-day").value) || 8;
-      const bRatio = (parseFloat(document.getElementById("calc-billable-ratio").value) || 65) / 100;
+      const net = parseFloat(document.getElementById("calc-desired-net").value) || 0;
+      const exp = parseFloat(document.getElementById("calc-monthly-expenses").value) || 0;
+      const tax = (parseFloat(document.getElementById("calc-tax-rate").value) || 0) / 100;
+      const vac = parseFloat(document.getElementById("calc-vacation-weeks").value) || 0;
+      const hDay = parseFloat(document.getElementById("calc-hours-day").value) || 0;
+      const bRatio = (parseFloat(document.getElementById("calc-billable-ratio").value) || 0) / 100;
 
-      const monthlyGross = (net + exp) / (1 - tax);
-      const workingWeeks = 52 - vac;
-      const totalBillable = workingWeeks * 5 * hDay * bRatio;
+      const monthlyGross = (1 - tax > 0) ? (net + exp) / (1 - tax) : (net + exp);
+      const workingWeeks = Math.max(1, 52 - vac);
+      const totalBillable = Math.max(1, workingWeeks * 5 * hDay * bRatio);
       const hourly = (monthlyGross * 12) / totalBillable;
       const daily = hourly * (hDay * bRatio);
 
       document.getElementById("res-hourly-rate").textContent = hourly.toFixed(2) + " €";
       document.getElementById("res-day-rate").textContent = daily.toFixed(2) + " €";
       document.getElementById("res-monthly-gross").textContent = Math.round(monthlyGross).toLocaleString("es-ES") + " €";
+      
+      const hourlyPill = document.getElementById("res-hourly-pill");
+      if (hourlyPill) hourlyPill.textContent = hourly.toFixed(2) + " €/h";
+      const netPill = document.getElementById("res-net-pill");
+      if (netPill) netPill.textContent = Math.round(net).toLocaleString("es-ES") + " €";
     }
     document.querySelectorAll("input").forEach(i => i.addEventListener("input", calculate));
     calculate();

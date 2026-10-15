@@ -10,6 +10,30 @@
   }
 }
 
+/* Bordes y estados de foco limpios para todos los formularios */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+select,
+textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #6366f1;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+
 .ad-slot-placeholder {
   min-height: 80px;
   background: repeating-linear-gradient(
