@@ -89,8 +89,11 @@ def create_cover(filename, bg_start, bg_end, accent_color, category_tag, title, 
     for i, bullet in enumerate(bullets):
         by = start_bullet_y + (i * 55)
         # Checkmark icon box
-        draw.rounded_rectangle([(card_margin_x + 50, by - 4), (card_margin_x + 82, by + 28)], radius=8, fill=accent_color)
-        draw.text((card_margin_x + 58, by), "✓", font=get_font(20, bold=True), fill=(255, 255, 255))
+        bx = card_margin_x + 50
+        draw.rounded_rectangle([(bx, by - 4), (bx + 32, by + 28)], radius=8, fill=accent_color)
+        # Vector checkmark (two clean anti-aliased lines)
+        draw.line([(bx + 9, by + 12), (bx + 15, by + 18)], fill=(255, 255, 255), width=3)
+        draw.line([(bx + 15, by + 18), (bx + 24, by + 7)], fill=(255, 255, 255), width=3)
         draw.text((card_margin_x + 100, by), bullet, font=font_bullets, fill=(243, 244, 246))
 
     # 8. Elemento visual mockup a la derecha (Tarjeta flotante de métrica)
@@ -110,7 +113,9 @@ def create_cover(filename, bg_start, bg_end, accent_color, category_tag, title, 
     draw.text((mock_x + 25, mock_y + 170), "Google Sheets & Excel", font=get_font(18, bold=True), fill=(255, 255, 255))
     
     draw.rounded_rectangle([(mock_x + 20, mock_y + 210), (mock_x + 310, mock_y + 245)], radius=8, fill=(16, 185, 129))
-    draw.text((mock_x + 75, mock_y + 218), "✓ LISTO PARA USAR", font=get_font(14, bold=True), fill=(255, 255, 255))
+    draw.line([(mock_x + 55, mock_y + 228), (mock_x + 61, mock_y + 234)], fill=(255, 255, 255), width=2)
+    draw.line([(mock_x + 61, mock_y + 234), (mock_x + 70, mock_y + 222)], fill=(255, 255, 255), width=2)
+    draw.text((mock_x + 78, mock_y + 218), "LISTO PARA USAR", font=get_font(14, bold=True), fill=(255, 255, 255))
 
     # Guardar imagen PNG
     out_dir = r"C:\Users\Miguel\.gemini\antigravity\scratch\freelance-toolkit-saas\entregables"
