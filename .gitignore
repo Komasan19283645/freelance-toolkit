@@ -13,3 +13,4 @@ env/
 venv/
 
 .agents/
+.system_generated/

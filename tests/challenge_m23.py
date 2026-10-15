@@ -15,10 +15,13 @@ Zero external dependencies - standard library only.
 import os
 import sys
 import re
+import io
+import contextlib
 import unittest
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from typing import Dict, List, Tuple, Set
+
 
 # Ensure UTF-8 output on Windows
 if sys.platform == "win32" and hasattr(sys.stdout, "reconfigure"):
@@ -482,7 +485,8 @@ class ChallengeDistributionCampaignScript(unittest.TestCase):
     def test_simulation_dry_run_executes_cleanly(self):
         """Simulation in dry_run mode must process all 23 items successfully with exit status True."""
         data = parse_and_validate_campaigns()
-        res = simulate_distribution(data, channel_filter="all", dry_run=True)
+        with contextlib.redirect_stdout(io.StringIO()):
+            res = simulate_distribution(data, channel_filter="all", dry_run=True)
         self.assertTrue(res["success"], "Distribution simulation failed")
         self.assertEqual(res["total_dispatched"], 23, "Must dispatch exactly 23 campaign items")
         self.assertEqual(len(res["items"]), 23, "Must record 23 dispatched item records")
@@ -495,7 +499,8 @@ class ChallengeDistributionCampaignScript(unittest.TestCase):
         """
         data = parse_and_validate_campaigns()
         for i in range(10):  # 10 full passes = 230 simulated delays
-            res = simulate_distribution(data, channel_filter="all", dry_run=True, min_pacing=45.0, max_pacing=90.0)
+            with contextlib.redirect_stdout(io.StringIO()):
+                res = simulate_distribution(data, channel_filter="all", dry_run=True, min_pacing=45.0, max_pacing=90.0)
             for item in res["items"]:
                 delay = item["delay_seconds"]
                 self.assertGreaterEqual(
@@ -508,6 +513,7 @@ class ChallengeDistributionCampaignScript(unittest.TestCase):
                     90.0,
                     f"Pacing violation: delay {delay:.2f}s exceeds maximum human bound of 90.0s",
                 )
+
 
     def test_preflight_rejection_on_commercial_reddit_payload(self):
         """
@@ -557,9 +563,11 @@ class ChallengeDistributionCampaignScript(unittest.TestCase):
             "pinterest": [],
             "errors": ["VIOLATION R3: Corrupted campaign payload"],
         }
-        res = simulate_distribution(corrupted_campaign, dry_run=True)
+        with contextlib.redirect_stdout(io.StringIO()):
+            res = simulate_distribution(corrupted_campaign, dry_run=True)
         self.assertFalse(res["success"], "Simulation must fail when errors list is non-empty")
         self.assertEqual(res["total_dispatched"], 0, "Zero items must be dispatched on validation failure")
+
 
 
 def run_challenge_suite():
