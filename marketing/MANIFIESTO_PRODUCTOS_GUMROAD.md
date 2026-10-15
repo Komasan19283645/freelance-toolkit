@@ -2,7 +2,12 @@
 
 Este documento contiene la ficha técnica exacta de cada uno de los 8 productos desarrollados para subirlos a Gumroad o Etsy en menos de 1 minuto por producto sin depender del agente de navegador lento.
 
-Carpeta local de archivos: `C:\Users\Miguel\.gemini\antigravity\scratch\freelance-toolkit-saas\entregables`
+- **Carpeta local de archivos:** `C:\Users\Miguel\.gemini\antigravity\scratch\freelance-toolkit-saas\entregables`
+- **Estructura de Precios Internacional:**
+  - Micro-Sistemas Individuales: **$9 USD** (o 9 €)
+  - All-in-One Suite (8 Sistemas): **$39 USD** (o 19 € precio base de lanzamiento)
+  - Lead Magnet / Starter Pack: **$0** (Free starter pack con descarga directa)
+  - Código Promocional Activo: `LANZAMIENTO20` (20% de descuento adicional)
 
 ---
 

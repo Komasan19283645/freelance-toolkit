@@ -4,7 +4,12 @@ Usa estos textos tal cual para conseguir tus primeras ventas sin pagar publicida
 
 ---
 
-## 1. LinkedIn (Donde están los autónomos y profesionales que compran)
+## 1. LinkedIn [QUARANTINADO - ACCESO ESTRICTAMENTE PROHIBIDO (REQUISITO R4)]
+
+> ⛔ **AVISO DE SEGURIDAD OPERACIONAL Y PRIVACIDAD (REQUISITO R4)**:
+> **EL ACCESO DE AGENTES O AUTOMATIZACIONES A LINKEDIN ESTÁ TERMINANTEMENTE PROHIBIDO.**
+> Bajo ninguna circunstancia o justificación ningún agente o script debe abrir, acceder o publicar en LinkedIn, ni publicar contenido que enlace a la identidad real o académica del usuario.
+> Este texto queda archivado exclusivamente con fines históricos y NO debe ser distribuido por ningún sistema automatizado.
 
 ```text
 Llevo años viendo a autónomos y freelancers cometer el mismo error cada trimestre:
@@ -75,8 +80,11 @@ Me cansé de los softwares de pago tipo Holded o Factusol porque para un freelan
 
 Al final me diseñé una hoja automatizada en Google Sheets con las fórmulas de cálculo de retenciones y control de gastos deducibles. A mí me ha ahorrado bastante tiempo y tranquilidad mental.
 
-Por si a alguien le sirve para ahorrarse el follón de montarlo desde cero, la he dejado subida aquí por 9€:
-https://migueldp3.gumroad.com/l/bszbzj
+He documentado paso a paso toda la guía práctica de cómo estructurar una factura, calcular los tramos de IRPF y desglosar el IVA soportado/repercutido en una guía educativa abierta y gratuita:
+https://komasan19283645.github.io/freelance-toolkit/como-hacer-factura-autonomo-irpf-iva.html
+
+Además, si necesitáis generar facturas en PDF sin registros ni suscripciones, tenéis la herramienta abierta en el navegador (100% en cliente, sin almacenar datos):
+https://komasan19283645.github.io/freelance-toolkit/
 
 Si alguien tiene dudas de cómo estructurar las fórmulas de IVA repercutido vs soportado en Sheets, decidme por comentarios y os paso la estructura básica sin problema.
 ```

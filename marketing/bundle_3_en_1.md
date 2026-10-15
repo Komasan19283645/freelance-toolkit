@@ -52,3 +52,24 @@ El **Freelance All-in-One Suite** reúne los 3 sistemas más vendidos para domin
 * Sin cuotas mensuales ni registros adicionales.
 * Incluye actualizaciones de formato para todo el año 2026.
 ```
+
+---
+
+## 🌍 International Edition: Freelance All-in-One Suite 2026 (8-in-1 Full Stack)
+
+* **Gumroad Product Type:** Digital Product
+* **International Pricing:** **$39 USD** (Global market standard) / **19 €** (Spanish baseline) / **$9 USD** individual systems
+* **Promotional Discount:** **20% OFF** with code `LANZAMIENTO20`
+* **Free Lead Magnet:** Free Starter Pack ($0) at `index-en.html`
+* **Full 8-Product Inventory Included:**
+  1. `Freelance_Finance_Hub_2026.xlsx` ($9)
+  2. `Freelance_Client_CRM_2026.xlsx` ($9)
+  3. `Email_Swipe_File_Pro.html` ($9)
+  4. `Personal_Budget_50_30_20_2026.xlsx` ($9)
+  5. `Freelance_Habit_Tracker_2026.xlsx` ($9)
+  6. `Social_Media_Content_Planner_2026.xlsx` ($9)
+  7. `Reseller_Profit_Tracker_2026.xlsx` ($9)
+  8. `Freelance_Project_Quote_Calculator.xlsx` ($9)
+* **Cover Asset:** `entregables/cover_bundle_all_in_one.png`
+* **Live Product Link:** `https://migueldp3.gumroad.com/l/nghfmz`
+

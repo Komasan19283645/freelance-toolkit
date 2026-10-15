@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelance Hourly Rate Calculator - FreelanceToolkit</title>
+  <meta name="description" content="Calculate your minimum profitable hourly and daily freelance rate based on real expenses, taxes, vacation time and billable hours. Free calculator.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Canonical & Hreflang Alternates -->
+  <link rel="canonical" href="https://komasan19283645.github.io/freelance-toolkit/calculator-en.html">
+  <link rel="alternate" hreflang="es" href="https://komasan19283645.github.io/freelance-toolkit/calculator.html">
+  <link rel="alternate" hreflang="en" href="https://komasan19283645.github.io/freelance-toolkit/calculator-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://komasan19283645.github.io/freelance-toolkit/calculator.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://komasan19283645.github.io/freelance-toolkit/calculator-en.html">
+  <meta property="og:title" content="Freelance Hourly Rate Calculator - FreelanceToolkit">
+  <meta property="og:description" content="Calculate your minimum profitable freelance rate based on expenses, taxes and vacation time. Zero guesswork.">
+  <meta property="og:image" content="https://komasan19283645.github.io/freelance-toolkit/entregables/cover_quote_calculator.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Komaleon37">
+  <meta name="twitter:creator" content="@Komaleon37">
+  <meta name="twitter:title" content="Freelance Hourly Rate Calculator - FreelanceToolkit">
+  <meta name="twitter:description" content="Calculate your minimum profitable freelance rate based on expenses, taxes and vacation time. Zero guesswork.">
+  <meta name="twitter:image" content="https://komasan19283645.github.io/freelance-toolkit/entregables/cover_quote_calculator.png">
+</head>
+<body class="h-full flex flex-col font-sans text-slate-800 antialiased bg-slate-50">
+  
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index-en.html" class="flex items-center space-x-2 sm:space-x-3">
+          <!-- Mobile Menu Button -->
+          <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Open menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+
+          <div class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-black text-lg shadow-md shadow-indigo-200">FT</div>
+          <span class="text-lg font-bold text-slate-900 tracking-tight">Freelance<span class="text-indigo-600">Toolkit</span></span>
+        </a>
+
+        <nav class="hidden md:flex space-x-1">
+          <a href="index-en.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">Invoicing</a>
+          <a href="calculator-en.html" class="px-3.5 py-2 text-sm font-semibold rounded-lg bg-indigo-50 text-indigo-700">Rate Calculator</a>
+          <a href="store-en.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">Pro Templates</a>
+        </nav>
+
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          <!-- Language Switcher -->
+          <div class="flex items-center space-x-1 border border-slate-200 rounded-lg p-0.5 bg-slate-50 text-xs font-bold">
+            <a href="calculator.html" class="px-2 py-1 rounded text-slate-500 hover:text-slate-900 transition">ES</a>
+            <span class="text-slate-300">|</span>
+            <span class="px-2 py-1 rounded bg-white text-indigo-600 shadow-xs">EN</span>
+          </div>
+
+          <a href="store-en.html" class="text-xs font-semibold px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm transition-all hover:shadow">
+            Get Pro Sheets
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 px-4 pt-2 pb-4 space-y-1.5 shadow-lg">
+      <a href="index-en.html" class="block px-3 py-2 text-sm font-semibold rounded-lg text-slate-700 hover:bg-slate-100">Free Invoicing</a>
+      <a href="calculator-en.html" class="block px-3 py-2 text-sm font-medium rounded-lg text-slate-700 bg-indigo-50 text-indigo-700">Rate Calculator</a>
+      <a href="store-en.html" class="block px-3 py-2 text-sm font-medium rounded-lg text-indigo-700 bg-indigo-50 hover:bg-indigo-100 flex items-center justify-between">
+        <span>⭐ Pro Spreadsheets (Google Sheets & Excel)</span>
+        <span class="text-xs bg-indigo-200 text-indigo-800 px-2 py-0.5 rounded font-bold">$9</span>
+      </a>
+      <div class="pt-2 border-t border-slate-100 flex justify-between items-center px-3 text-xs">
+        <span class="font-bold text-slate-400 uppercase">Language:</span>
+        <div class="space-x-2">
+          <a href="calculator.html" class="text-indigo-600 font-bold hover:underline">🇪🇸 Español</a>
+          <span class="text-slate-300">|</span>
+          <span class="font-bold text-slate-800">🇬🇧 English</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 mb-3">
+        <span>⚡</span> 100% Free Tool for Freelancers & Contractors
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Freelance Hourly Rate Calculator</h1>
+      <p class="mt-2 text-sm sm:text-base text-slate-600">Calculate exactly what to charge per hour and per project to cover overhead expenses, taxes, health insurance, and paid time off.</p>
+    </div>
+
+    <!-- CURRENCY PICKER -->
+    <div class="flex justify-center mb-6">
+      <div class="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs text-xs">
+        <span class="font-bold text-slate-600">Select Currency:</span>
+        <button type="button" onclick="setCurrency('$', 'USD')" id="curr-usd" class="px-2.5 py-1 rounded-lg font-bold bg-indigo-600 text-white transition">USD ($)</button>
+        <button type="button" onclick="setCurrency('€', 'EUR')" id="curr-eur" class="px-2.5 py-1 rounded-lg font-bold text-slate-600 hover:bg-slate-100 transition">EUR (€)</button>
+        <button type="button" onclick="setCurrency('£', 'GBP')" id="curr-gbp" class="px-2.5 py-1 rounded-lg font-bold text-slate-600 hover:bg-slate-100 transition">GBP (£)</button>
+        <button type="button" onclick="setCurrency('CA$', 'CAD')" id="curr-cad" class="px-2.5 py-1 rounded-lg font-bold text-slate-600 hover:bg-slate-100 transition">CAD (CA$)</button>
+        <button type="button" onclick="setCurrency('A$', 'AUD')" id="curr-aud" class="px-2.5 py-1 rounded-lg font-bold text-slate-600 hover:bg-slate-100 transition">AUD (A$)</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- FORM PANEL -->
+      <div id="calculator-form" class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <h2 class="text-base font-bold text-slate-900">1. Your Financial Targets</h2>
+          <span class="text-xs text-slate-500 font-medium">Real-time dynamic updates</span>
+        </div>
+
+        <!-- Desired Net Income -->
+        <div>
+          <div class="flex justify-between items-center mb-1.5">
+            <label for="calc-desired-net" class="text-xs font-bold text-slate-700">Target Monthly Take-Home Pay</label>
+            <span class="text-[11px] text-slate-400">Net cash in your bank account</span>
+          </div>
+          <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+            <input type="number" id="calc-desired-net" value="4500" step="100" class="w-full rounded-xl border-0 py-3 pl-4 pr-20 text-slate-900 font-bold text-base focus:ring-0 focus:outline-none">
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
+              <span id="label-curr-1" class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">$ / mo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monthly Overhead Expenses -->
+        <div>
+          <div class="flex justify-between items-center mb-1.5">
+            <label for="calc-monthly-expenses" class="text-xs font-bold text-slate-700">Monthly Business Overhead Expenses</label>
+            <span class="text-[11px] text-slate-400">Software, hardware, insurance, hosting...</span>
+          </div>
+          <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+            <input type="number" id="calc-monthly-expenses" value="650" step="50" class="w-full rounded-xl border-0 py-3 pl-4 pr-20 text-slate-900 font-bold text-base focus:ring-0 focus:outline-none">
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
+              <span id="label-curr-2" class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">$ / mo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Taxes and Vacation Weeks -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="calc-tax-rate" class="block text-xs font-bold text-slate-700 mb-1.5">Estimated Tax Rate (Income + Self-Emp)</label>
+            <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+              <input type="number" id="calc-tax-rate" value="25" min="0" max="60" class="w-full rounded-xl border-0 py-2.5 pl-4 pr-10 text-slate-900 font-bold text-sm focus:ring-0 focus:outline-none">
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                <span class="text-xs font-semibold text-slate-400">%</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Typically 20% to 30% for freelancers</p>
+          </div>
+          <div>
+            <label for="calc-vacation-weeks" class="block text-xs font-bold text-slate-700 mb-1.5">Time Off / Year (Weeks)</label>
+            <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+              <input type="number" id="calc-vacation-weeks" value="4" min="0" max="25" class="w-full rounded-xl border-0 py-2.5 pl-4 pr-16 text-slate-900 font-bold text-sm focus:ring-0 focus:outline-none">
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                <span class="text-xs font-semibold text-slate-400">weeks</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Vacations, holidays, & sick days</p>
+          </div>
+        </div>
+
+        <!-- Hours & Billable Ratio -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="calc-hours-day" class="block text-xs font-bold text-slate-700 mb-1.5">Work Hours / Day</label>
+            <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+              <input type="number" id="calc-hours-day" value="8" min="1" max="16" class="w-full rounded-xl border-0 py-2.5 pl-4 pr-16 text-slate-900 font-bold text-sm focus:ring-0 focus:outline-none">
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                <span class="text-xs font-semibold text-slate-400">hrs / day</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Total workday duration</p>
+          </div>
+          <div>
+            <label for="calc-billable-ratio" class="block text-xs font-bold text-slate-700 mb-1.5">% Billable Client Hours</label>
+            <div class="relative rounded-xl border border-slate-300 bg-white shadow-sm focus-within:border-indigo-600 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all">
+              <input type="number" id="calc-billable-ratio" value="60" min="10" max="100" class="w-full rounded-xl border-0 py-2.5 pl-4 pr-10 text-slate-900 font-bold text-sm focus:ring-0 focus:outline-none">
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                <span class="text-xs font-semibold text-slate-400">%</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">The rest is admin, proposals & sales</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTS PANEL -->
+      <div class="lg:col-span-5 space-y-5">
+        <div class="bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 text-white p-7 sm:p-8 rounded-2xl shadow-xl border border-indigo-800/50 space-y-6">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-300 bg-indigo-950/80 px-2.5 py-1 rounded-full border border-indigo-700/50">Your Minimum Profitable Rate</span>
+            <span class="text-emerald-400 text-xs font-semibold flex items-center gap-1">● No Losses</span>
+          </div>
+
+          <!-- Hourly Rate -->
+          <div>
+            <p class="text-xs font-medium text-indigo-200">Recommended Hourly Rate</p>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span id="res-hourly-rate" class="text-4xl sm:text-5xl font-black text-white tracking-tight">$71.53</span>
+              <span class="text-sm font-semibold text-indigo-300">/ hour</span>
+            </div>
+          </div>
+
+          <!-- Key Metrics -->
+          <div class="grid grid-cols-2 gap-3 pt-5 border-t border-indigo-800/70">
+            <div class="bg-white/5 p-3 rounded-xl border border-white/10">
+              <p class="text-[11px] text-indigo-200 font-medium">Day Rate (8h Day)</p>
+              <p id="res-day-rate" class="text-xl font-bold text-white mt-0.5">$343.33</p>
+            </div>
+            <div class="bg-white/5 p-3 rounded-xl border border-white/10">
+              <p class="text-[11px] text-indigo-200 font-medium">Gross Revenue / Mo</p>
+              <p id="res-monthly-gross" class="text-xl font-bold text-white mt-0.5">$6,867</p>
+            </div>
+          </div>
+
+          <div class="text-[11px] text-indigo-200/80 leading-relaxed bg-indigo-950/40 p-3 rounded-xl border border-indigo-800/40">
+            📌 If you charge less than <strong id="res-hourly-pill" class="text-indigo-200 font-bold">$71.53/hr</strong>, you will fail to hit your target net pay of <strong id="res-net-pill" class="text-white">$4,500/mo</strong> after paying business expenses and taxes.
+          </div>
+        </div>
+
+        <!-- High-converting CRO Card: Email Swipe File Pro -->
+        <div class="p-5 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300/80 rounded-2xl shadow-sm text-xs text-amber-950 space-y-3">
+          <div class="flex items-center gap-2 font-black text-amber-900 text-sm">
+            <span class="text-base">💬</span> Do clients say your rates are too high?
+          </div>
+          <p class="text-amber-900/90 leading-relaxed text-xs">
+            Use these <strong>40+ battle-tested email scripts</strong> to negotiate high-ticket fees without getting ghosted, filter cheap tire-kickers, and politely collect unpaid invoices on time.
+          </p>
+          <div class="flex items-center justify-between text-[11px] font-bold text-amber-800 bg-amber-100/70 px-3 py-1.5 rounded-lg border border-amber-200">
+            <span>🔥 Launch Promo: Use code <strong class="underline">LANZAMIENTO20</strong></span>
+            <span class="text-emerald-700 font-bold">20% OFF</span>
+          </div>
+          <a href="https://migueldp3.gumroad.com/l/pswllr" target="_blank" class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs transition-all shadow-sm hover:shadow">
+            <span>Email Swipe File Pro ($9)</span>
+            <span>Get scripts & templates &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Suite Banner -->
+        <div class="p-5 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200/80 rounded-2xl shadow-sm text-xs text-indigo-950 space-y-2">
+          <div class="flex items-center gap-2 font-bold text-indigo-900 text-sm">
+            <span>📊</span> Looking for complete financial tracking?
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            The <a href="store-en.html" class="underline font-bold text-indigo-700 hover:text-indigo-800">Freelance Finance Hub ($9)</a> includes revenue tracking, expense logs, client invoicing ledgers, and automated profit & loss summaries in Google Sheets and Excel.
+          </p>
+          <a href="store-en.html" class="inline-flex items-center text-xs font-bold text-indigo-600 hover:text-indigo-800 pt-1">
+            Explore all 8 professional templates &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-slate-600 font-medium">
+        <a href="index-en.html" class="hover:text-indigo-600">Free Invoicing</a>
+        <a href="calculator-en.html" class="hover:text-indigo-600">Rate Calculator</a>
+        <a href="store-en.html" class="hover:text-indigo-600">Pro Spreadsheets</a>
+      </div>
+      <p class="text-slate-400 text-[11px] pt-2">FreelanceToolkit &copy; 2026. Practical digital tools and systems for modern independent professionals.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentCurrencySymbol = "$";
+
+    function setCurrency(symbol, code) {
+      currentCurrencySymbol = symbol;
+      
+      const buttons = [
+        { id: "curr-usd", sym: "$" },
+        { id: "curr-eur", sym: "€" },
+        { id: "curr-gbp", sym: "£" },
+        { id: "curr-cad", sym: "CA$" },
+        { id: "curr-aud", sym: "A$" }
+      ];
+
+      buttons.forEach(b => {
+        const el = document.getElementById(b.id);
+        if (b.sym === symbol) {
+          el.className = "px-2.5 py-1 rounded-lg font-bold bg-indigo-600 text-white transition";
+        } else {
+          el.className = "px-2.5 py-1 rounded-lg font-bold text-slate-600 hover:bg-slate-100 transition";
+        }
+      });
+
+      document.getElementById("label-curr-1").textContent = symbol + " / mo";
+      document.getElementById("label-curr-2").textContent = symbol + " / mo";
+
+      calculate();
+    }
+
+    function calculate() {
+      const net = parseFloat(document.getElementById("calc-desired-net").value) || 0;
+      const exp = parseFloat(document.getElementById("calc-monthly-expenses").value) || 0;
+      const tax = (parseFloat(document.getElementById("calc-tax-rate").value) || 0) / 100;
+      const vac = parseFloat(document.getElementById("calc-vacation-weeks").value) || 0;
+      const hDay = parseFloat(document.getElementById("calc-hours-day").value) || 0;
+      const bRatio = (parseFloat(document.getElementById("calc-billable-ratio").value) || 0) / 100;
+
+      const monthlyGross = (1 - tax > 0) ? (net + exp) / (1 - tax) : (net + exp);
+      const workingWeeks = Math.max(1, 52 - vac);
+      const totalBillable = Math.max(1, workingWeeks * 5 * hDay * bRatio);
+      const hourly = (monthlyGross * 12) / totalBillable;
+      const daily = hourly * (hDay * bRatio);
+
+      document.getElementById("res-hourly-rate").textContent = currentCurrencySymbol + hourly.toFixed(2);
+      document.getElementById("res-day-rate").textContent = currentCurrencySymbol + daily.toFixed(2);
+      document.getElementById("res-monthly-gross").textContent = currentCurrencySymbol + Math.round(monthlyGross).toLocaleString("en-US");
+      
+      const hourlyPill = document.getElementById("res-hourly-pill");
+      if (hourlyPill) hourlyPill.textContent = currentCurrencySymbol + hourly.toFixed(2) + "/hr";
+      const netPill = document.getElementById("res-net-pill");
+      if (netPill) netPill.textContent = currentCurrencySymbol + Math.round(net).toLocaleString("en-US") + "/mo";
+    }
+
+    document.querySelectorAll("input").forEach(i => i.addEventListener("input", calculate));
+    calculate();
+  </script>
+</body>
+</html>
