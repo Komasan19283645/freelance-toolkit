@@ -8,11 +8,12 @@ Executes:
    - scripts/verify_sitemap.py
    - scripts/test_calc.py
    - scripts/verify_privacy.py
-2. 4-Tier E2E Test Suite:
+2. 5-Tier E2E Test Suite:
    - Tier 1: Feature Coverage (F1 to F19) - tests/test_tier1_features.py
    - Tier 2: Boundary & Corner Cases     - tests/test_tier2_boundaries.py
    - Tier 3: Cross-Feature Combinations  - tests/test_tier3_combinations.py
    - Tier 4: Real-World Scenarios        - tests/test_tier4_scenarios.py
+   - Tier 5: Adversarial Hardening       - tests/test_tier5_adversarial.py
 
 Zero external dependencies - pure Python 3.
 Exits with 0 when all active tests pass.
@@ -141,7 +142,7 @@ def print_summary_table(script_results, tier_results):
         print(f"    └─ Details: {s['details']}")
 
     print("\n" + "-" * 80)
-    print("  4-TIER TEST SUITE EXECUTION SUMMARY")
+    print("  5-TIER TEST SUITE EXECUTION SUMMARY")
     print("-" * 80)
     print(f"  {'TIER / MODULE':<34} | {'TESTS':<6} | {'PASS':<6} | {'SKIP':<6} | {'FAIL':<6} | {'TIME'}")
     print("  " + "-" * 76)
@@ -158,6 +159,7 @@ def print_summary_table(script_results, tier_results):
         "test_tier2_boundaries": "Tier 2: Boundary & Corner Cases",
         "test_tier3_combinations": "Tier 3: Pairwise Combinations",
         "test_tier4_scenarios": "Tier 4: Application Scenarios",
+        "test_tier5_adversarial": "Tier 5: Adversarial Hardening",
     }
 
     for t in tier_results:
@@ -178,7 +180,7 @@ def print_summary_table(script_results, tier_results):
 
     # Threshold evaluation (enforced on full suite runs)
     threshold = 219  # 11*19 + max(5, 9.5) = 219
-    is_full_run = len(tier_results) == 4
+    is_full_run = len(tier_results) >= 4
     threshold_met = total_tests >= threshold if is_full_run else True
 
     print("\n  COVERAGE THRESHOLD AUDIT:")
@@ -204,7 +206,7 @@ def print_summary_table(script_results, tier_results):
 
 def main():
     parser = argparse.ArgumentParser(description="FreelanceToolkit Unified Test Runner")
-    parser.add_argument("--tier", type=int, choices=[1, 2, 3, 4], help="Run only specified tier (1-4)")
+    parser.add_argument("--tier", type=int, choices=[1, 2, 3, 4, 5], help="Run only specified tier (1-5)")
     parser.add_argument("--scripts", action="store_true", help="Run only verification scripts")
     parser.add_argument("--strict", action="store_true", help="Strict sitemap checking (requires 10/10 URLs)")
     parser.add_argument("-v", "--verbose", action="store_true", help="Verbose test execution")
@@ -236,12 +238,15 @@ def main():
         tier_modules = ["test_tier3_combinations"]
     elif args.tier == 4:
         tier_modules = ["test_tier4_scenarios"]
+    elif args.tier == 5:
+        tier_modules = ["test_tier5_adversarial"]
     else:
         tier_modules = [
             "test_tier1_features",
             "test_tier2_boundaries",
             "test_tier3_combinations",
             "test_tier4_scenarios",
+            "test_tier5_adversarial",
         ]
 
     print(f"[*] Running test tiers: {', '.join(tier_modules)}...")

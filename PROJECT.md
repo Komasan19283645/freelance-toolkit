@@ -48,7 +48,7 @@
 | M1 | Bilingual Web & Currency Engine | F1, F2, F3, F4, F5, F6: English pages, AUD currency, CRO modals, print fix, language switchers | Survey | DONE (Gate passed, 5/5 approvals) |
 | M2 | Programmatic SEO & Sitemap | F7, F8, F9, F10: sitemap.xml, robots.txt, canonical/hreflang tags, README.md | M1 | DONE (Gate passed, 3/3 approvals) |
 | M3 | Distribution Engine & Marketing | F11, F12, F13, F14, F15: Reddit, X, Pinterest campaigns, LinkedIn quarantine, distribution script | Survey | DONE (Gate passed, 3/3 approvals) |
-| M4 / Final | E2E Pass, Hardening & Git Push | F19 + 100% E2E test pass (Tiers 1-4) + Tier 5 adversarial hardening + privacy audit + git commit & push to origin/main | E2E, M1, M2, M3 | IN_PROGRESS |
+| M4 / Final | E2E Pass, Hardening & Git Push | F19 + 100% E2E test pass (Tiers 1-4) + Tier 5 adversarial hardening + privacy audit + git commit & push to origin/main | E2E, M1, M2, M3 | DONE |
 
 ## Interface Contracts
 ### Web Navigation & Language Switching Contract
