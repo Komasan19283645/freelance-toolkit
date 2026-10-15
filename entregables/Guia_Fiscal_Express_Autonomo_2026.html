@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía Fiscal Express & Checklist Autónomo 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; font-size: 11pt; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans p-6 md:p-12">
+  <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200">
+    
+    <!-- HEADER -->
+    <div class="flex items-center justify-between border-b border-slate-200 pb-6 mb-8">
+      <div>
+        <div class="inline-flex items-center space-x-2 text-indigo-600 font-bold text-xs uppercase tracking-wider mb-1">
+          <span>Recurso Gratuito Oficial</span>
+          <span>•</span>
+          <span>FreelanceToolkit 2026</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-black text-slate-900">Checklist Fiscal & Guía Express Autónomo</h1>
+        <p class="text-sm text-slate-500 mt-1">Cómo facturar, retener IRPF, declarar IVA y evitar sanciones de Hacienda.</p>
+      </div>
+      <button onclick="window.print()" class="no-print px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg shadow-sm transition">
+        🖨️ Imprimir / Guardar PDF
+      </button>
+    </div>
+
+    <!-- SECCIÓN 1: DATOS OBLIGATORIOS FACTURA -->
+    <section class="mb-8">
+      <h2 class="text-base font-bold text-indigo-700 uppercase tracking-wide mb-3 flex items-center">
+        <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 inline-flex items-center justify-center mr-2 text-xs font-black">1</span>
+        Los 7 Datos Obligatorios de una Factura Legal (RD 1619/2012)
+      </h2>
+      <div class="space-y-2 text-sm text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-200">
+        <label class="flex items-start space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="mt-1 rounded text-indigo-600 focus:ring-indigo-500">
+          <span><strong>Número y Serie:</strong> Correlativa en fecha y sin saltos (ej. 2026-001, 2026-002).</span>
+        </label>
+        <label class="flex items-start space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="mt-1 rounded text-indigo-600 focus:ring-indigo-500">
+          <span><strong>Fecha de Expedición:</strong> Día exacto de emisión y fecha de operación si difiere.</span>
+        </label>
+        <label class="flex items-start space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="mt-1 rounded text-indigo-600 focus:ring-indigo-500">
+          <span><strong>Datos del Emisor:</strong> Nombre completo o razón social, NIF/CIF y dirección fiscal en España.</span>
+        </label>
+        <label class="flex items-start space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="mt-1 rounded text-indigo-600 focus:ring-indigo-500">
+          <span><strong>Datos del Receptor:</strong> Nombre/empresa, NIF/CIF y dirección del cliente.</span>
+        </label>
+        <label class="flex items-start space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="mt-1 rounded text-indigo-600 focus:ring-indigo-500">
+          <span><strong>Descripción Detallada:</strong> Servicios prestados desglosados (unidad, precio unitario, subtotal).</span>
+        </label>
+        <label class="flex items-start space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="mt-1 rounded text-indigo-600 focus:ring-indigo-500">
+          <span><strong>Tipo Impositivo de IVA:</strong> General (21%), Reducido (10%) o Superreducido (4%). Si es exento, indicar el artículo legal (ej. Art. 20 Ley IVA).</span>
+        </label>
+        <label class="flex items-start space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="mt-1 rounded text-indigo-600 focus:ring-indigo-500">
+          <span><strong>Retención de IRPF:</strong> 15% general o 7% (año de alta en RETA y 2 siguientes). Solo aplicable si el cliente es empresa o autónomo en España.</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: CALENDARIO FISCAL TRIMESTRAL -->
+    <section class="mb-8">
+      <h2 class="text-base font-bold text-indigo-700 uppercase tracking-wide mb-3 flex items-center">
+        <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 inline-flex items-center justify-center mr-2 text-xs font-black">2</span>
+        Calendario Fiscal del Autónomo: Fechas Clave 2026
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+        <div class="p-3.5 bg-amber-50 border border-amber-200 rounded-xl">
+          <p class="font-bold text-amber-900 mb-1">1T (1 al 20 de Abril)</p>
+          <p class="text-amber-800">Modelo 303 (IVA Enero-Marzo) + Modelo 130 (Pago fraccionado IRPF 20%).</p>
+        </div>
+        <div class="p-3.5 bg-amber-50 border border-amber-200 rounded-xl">
+          <p class="font-bold text-amber-900 mb-1">2T (1 al 20 de Julio)</p>
+          <p class="text-amber-800">Modelo 303 (IVA Abril-Junio) + Modelo 130 (Pago fraccionado IRPF acumulado).</p>
+        </div>
+        <div class="p-3.5 bg-amber-50 border border-amber-200 rounded-xl">
+          <p class="font-bold text-amber-900 mb-1">3T (1 al 20 de Octubre)</p>
+          <p class="text-amber-800">Modelo 303 (IVA Julio-Septiembre) + Modelo 130 (Pago fraccionado IRPF acumulado).</p>
+        </div>
+        <div class="p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl">
+          <p class="font-bold text-emerald-900 mb-1">4T & Anuales (1 al 30 de Enero)</p>
+          <p class="text-emerald-800">Modelo 303 + Modelo 390 (Resumen Anual IVA) + Modelo 130.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: REGLA DE ORO DAC7 (WALLAPOP / VINTED) -->
+    <section class="mb-8">
+      <h2 class="text-base font-bold text-indigo-700 uppercase tracking-wide mb-3 flex items-center">
+        <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 inline-flex items-center justify-center mr-2 text-xs font-black">3</span>
+        Ventas de Segunda Mano: ¿Cuándo te vigila Hacienda? (DAC7)
+      </h2>
+      <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl text-xs space-y-2 text-slate-700">
+        <p><strong>El límite de comunicación:</strong> Las plataformas están obligadas por ley a enviar tus datos a la Agencia Tributaria si en un año natural alcanzas <strong>30 ventas</strong> o recibes más de <strong>2.000 € brutos</strong>.</p>
+        <p><strong>¿Tributa todo? NO:</strong></p>
+        <ul class="list-disc list-inside ml-2 space-y-1">
+          <li><strong>Venta de artículos personales con pérdida</strong> (compraste por 100€ y vendes por 30€): NO tributa en IRPF. Guarda justificantes de compra inicial.</li>
+          <li><strong>Reventa comercial o con beneficio</strong>: Tributa como ganancia patrimonial (del 19% al 28%) en la declaración de la Renta. Si es habitual y tu principal fuente de ingresos, exige alta en IAE y RETA.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CUPÓN DE DESCUENTO EXCLUSIVO -->
+    <div class="p-6 bg-gradient-to-r from-indigo-900 to-slate-900 rounded-2xl text-white mt-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span class="px-2.5 py-1 rounded bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider">Cupón Exclusivo 20% Dto</span>
+          <h3 class="text-lg font-bold mt-2">¿Quieres automatizar todo en Google Sheets o Excel?</h3>
+          <p class="text-xs text-indigo-200 mt-1">Usa el código <strong class="text-amber-300 font-mono text-sm">LANZAMIENTO20</strong> al finalizar tu compra en Gumroad.</p>
+        </div>
+        <a href="https://komasan19283645.github.io/freelance-toolkit/store.html" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs rounded-xl transition shadow shrink-0">
+          Ver Catálogo Completo &rarr;
+        </a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

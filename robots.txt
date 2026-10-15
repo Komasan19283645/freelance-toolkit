@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://komasan19283645.github.io/freelance-toolkit/sitemap.xml
