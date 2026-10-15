@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-slate-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo hacer una Factura de Autónomo: IVA, IRPF y Campos Obligatorios (2026)</title>
+  <meta name="description" content="Aprende a emitir facturas legales como autónomo en España. Cuándo aplicar el 7% o 15% de IRPF, el 21% de IVA y qué datos exige Hacienda. Generador gratuito incluido.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="h-full flex flex-col font-sans text-slate-800 antialiased bg-slate-50">
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center space-x-3">
+          <div class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-black text-lg shadow-md shadow-indigo-200">FT</div>
+          <span class="text-lg font-bold text-slate-900 tracking-tight">Freelance<span class="text-indigo-600">Toolkit</span></span>
+        </a>
+        <nav class="hidden md:flex space-x-1">
+          <a href="index.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">Facturación</a>
+          <a href="calculator.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">Calculadora Tarifa</a>
+          <a href="store.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">Plantillas Pro</a>
+          <a href="contracts.html" class="px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">Contratos & NDAs</a>
+        </nav>
+        <a href="store.html" class="text-xs font-semibold px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm transition-all">Ver Plantillas</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+    <!-- BREADCRUMB -->
+    <nav class="text-xs text-slate-500 mb-6 flex items-center gap-2">
+      <a href="index.html" class="hover:text-indigo-600">Inicio</a>
+      <span>/</span>
+      <span class="text-slate-800 font-semibold">Guía de Facturación</span>
+    </nav>
+
+    <article class="bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-8">
+      <header class="space-y-3 border-b border-slate-100 pb-6">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+          <span>🧾</span> Normativa Fiscal España & Hacienda
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          Cómo hacer una Factura de Autónomo: Guía Completa de IVA, IRPF y Requisitos Legales
+        </h1>
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          Todo lo que necesitas saber para emitir facturas válidas ante la Agencia Tributaria sin cometer errores en las retenciones ni en los tipos impositivos.
+        </p>
+      </header>
+
+      <!-- SECCIÓN 1: DATOS OBLIGATORIOS -->
+      <section class="space-y-4">
+        <h2 class="text-xl font-bold text-slate-900">1. Los 7 Datos Obligatorios de cualquier Factura</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          El Reglamento de Facturación (RD 1619/2012) establece que toda factura ordinaria debe contener de forma obligatoria los siguientes elementos:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
+            <strong class="text-slate-900">1. Número y Serie correlativa:</strong>
+            <p class="text-slate-500 mt-0.5">Debe ser correlativo en el tiempo (ej. 2026-001, 2026-002) sin huecos entre números.</p>
+          </div>
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
+            <strong class="text-slate-900">2. Fecha de Emisión y Vencimiento:</strong>
+            <p class="text-slate-500 mt-0.5">El día en que se emite el documento y el plazo pactado para el pago (normalmente 30 días).</p>
+          </div>
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
+            <strong class="text-slate-900">3. Datos del Emisor (Tus datos):</strong>
+            <p class="text-slate-500 mt-0.5">Nombre y apellidos, NIF/DNI y domicilio fiscal completo.</p>
+          </div>
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
+            <strong class="text-slate-900">4. Datos del Cliente:</strong>
+            <p class="text-slate-500 mt-0.5">Razón social o nombre, NIF/CIF y domicilio fiscal de la empresa o cliente.</p>
+          </div>
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
+            <strong class="text-slate-900">5. Descripción del servicio:</strong>
+            <p class="text-slate-500 mt-0.5">Concepto claro, unidades, precio unitario y base imponible.</p>
+          </div>
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
+            <strong class="text-slate-900">6. Desglose impositivo:</strong>
+            <p class="text-slate-500 mt-0.5">Tipo de IVA aplicado y tipo de retención de IRPF si procede.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: RETENCIÓN DE IRPF -->
+      <section class="space-y-4">
+        <h2 class="text-xl font-bold text-slate-900">2. ¿Cuánto IRPF debes retener: 7% o 15%?</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          La retención de IRPF solo se aplica cuando facturas a <strong>empresas o a otros autónomos</strong> en España (nunca a clientes particulares ni a clientes internacionales).
+        </p>
+
+        <div class="space-y-3">
+          <div class="p-4 bg-indigo-50 border border-indigo-200 rounded-2xl text-xs space-y-1">
+            <p class="font-bold text-indigo-900 text-sm">🔹 7% de IRPF (Nuevos Autónomos)</p>
+            <p class="text-indigo-800 leading-relaxed">
+              Puedes aplicar una retención reducida del <strong>7%</strong> durante el año en que te das de alta en el RETA y los <strong>dos años naturales siguientes</strong>, siempre que no hayas ejercido actividad profesional en los 12 meses anteriores.
+            </p>
+          </div>
+          <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl text-xs space-y-1">
+            <p class="font-bold text-slate-900 text-sm">🔹 15% de IRPF (Tipo General)</p>
+            <p class="text-slate-600 leading-relaxed">
+              Es el tipo estándar aplicable una vez transcurrido el periodo inicial o si prefieres retener más para no pagar en la declaración de la Renta anual.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 3: EJEMPLO DE CÁLCULO -->
+      <section class="space-y-4">
+        <h2 class="text-xl font-bold text-slate-900">3. Ejemplo numérico de una factura profesional</h2>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Supongamos un servicio de desarrollo web con una base de 1.000 € para un cliente español (con 21% IVA y 15% IRPF):
+        </p>
+
+        <div class="bg-slate-900 text-white p-5 rounded-2xl text-xs space-y-2 font-mono">
+          <div class="flex justify-between"><span>Base Imponible:</span><span>1.000,00 €</span></div>
+          <div class="flex justify-between text-emerald-400"><span>+ IVA (21%):</span><span>+ 210,00 €</span></div>
+          <div class="flex justify-between text-amber-400"><span>- Retención IRPF (15%):</span><span>- 150,00 €</span></div>
+          <div class="flex justify-between font-bold text-base border-t border-slate-700 pt-2 text-white"><span>TOTAL A COBRAR (Líquido):</span><span>1.060,00 €</span></div>
+        </div>
+        <p class="text-[11px] text-slate-500">
+          Nota: El cliente te paga 1.060 €, pero ingresa los 150 € de IRPF a tu nombre en Hacienda mediante el Modelo 111.
+        </p>
+      </section>
+
+      <!-- CTA FACTURADOR GRATIS Y HUB -->
+      <section class="p-6 sm:p-8 bg-gradient-to-br from-indigo-950 to-slate-900 rounded-3xl text-white space-y-5 shadow-xl border border-indigo-800">
+        <div class="flex items-center gap-2 text-indigo-300 text-xs font-bold uppercase tracking-wider">
+          <span>⚡</span> Herramienta Lista para Usar
+        </div>
+        <h3 class="text-xl sm:text-2xl font-black tracking-tight">
+          Crea tus facturas en 2 minutos sin registrarte ni pagar nada
+        </h3>
+        <p class="text-xs sm:text-sm text-indigo-200 leading-relaxed">
+          Usa nuestro generador web gratuito: introduce los datos, calcula el IVA/IRPF en directo y descárgate el PDF listo para enviar a tu cliente.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 items-center pt-1">
+          <a href="index.html" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-bold text-xs text-white shadow-lg shadow-indigo-600/30 transition-all text-center">
+            Generar Factura Gratis en PDF &rarr;
+          </a>
+          <a href="https://migueldp3.gumroad.com/l/bszbzj" target="_blank" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 font-semibold text-xs text-white transition-all text-center">
+            Ver Freelance Finance Hub (9 €)
+          </a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-slate-600 font-medium">
+        <a href="index.html" class="hover:text-indigo-600">Facturación Gratis</a>
+        <a href="calculator.html" class="hover:text-indigo-600">Calculadora de Tarifa</a>
+        <a href="store.html" class="hover:text-indigo-600">Plantillas Excel Pro</a>
+        <a href="contracts.html" class="hover:text-indigo-600">Contratos & NDAs</a>
+      </div>
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-slate-500 text-[11px] pt-2 border-t border-slate-100">
+        <span class="font-semibold text-slate-700">Guías Prácticas:</span>
+        <a href="como-hacer-factura-autonomo-irpf-iva.html" class="hover:text-indigo-600 font-bold text-indigo-700">Cómo hacer una Factura de Autónomo (IVA e IRPF)</a>
+        <a href="ventas-vinted-wallapop-hacienda-dac7.html" class="hover:text-indigo-600">Ventas en Vinted y Wallapop: Límite DAC7 e Impuestos</a>
+        <a href="metodo-50-30-20-presupuesto-espanol.html" class="hover:text-indigo-600">Método 50/30/20 y Plan Bola de Nieve</a>
+      </div>
+      <p class="text-slate-400 text-[11px] pt-2">FreelanceToolkit &copy; 2026. Herramientas y recursos prácticos para profesionales independientes.</p>
+    </div>
+  </footer>
+</body>
+</html>
