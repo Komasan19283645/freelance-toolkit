@@ -64,8 +64,17 @@ class TestBoostViralCro(unittest.TestCase):
         self.assertIn("Welcome Hacker News!", content)
         self.assertIn("https://github.com/komasan19283645/freelance-toolkit", content)
 
+    def test_hn_banner_present_in_calculators(self):
+        for fname in ["calculator-en.html", "calculator.html"]:
+            path = os.path.join(BASE_DIR, fname)
+            with open(path, "r", encoding="utf-8") as f:
+                content = f.read()
+            self.assertIn('id="hn-welcome-banner"', content, f"{fname} must feature HN banner")
+            self.assertIn("Welcome Hacker News!", content, f"{fname} must greet HN users")
+            self.assertIn("Star on GitHub", content, f"{fname} must invite starring on GitHub")
+
     def test_hn_banner_detection_logic_in_script(self):
-        for fname in ["index-en.html", "index.html"]:
+        for fname in TARGET_PAGES:
             path = os.path.join(BASE_DIR, fname)
             with open(path, "r", encoding="utf-8") as f:
                 content = f.read()
@@ -89,6 +98,15 @@ class TestBoostViralCro(unittest.TestCase):
             self.assertIn("shareToolkit('whatsapp'", content, f"{fname} must feature WhatsApp share hook")
             self.assertIn("shareToolkit('telegram'", content, f"{fname} must feature Telegram share hook")
             self.assertIn("shareToolkit('copy'", content, f"{fname} must feature Copy Link share hook")
+
+    def test_robust_clipboard_copy_with_fallback(self):
+        for fname in TARGET_PAGES:
+            path = os.path.join(BASE_DIR, fname)
+            with open(path, "r", encoding="utf-8") as f:
+                content = f.read()
+            self.assertIn("copyToClipboard", content, f"{fname} must define copyToClipboard")
+            self.assertIn("fallbackCopyText", content, f"{fname} must implement fallbackCopyText")
+            self.assertIn("execCommand", content, f"{fname} must use execCommand copy fallback")
 
     def test_viral_sharing_prefilled_tweet_text(self):
         # English invoice
@@ -160,6 +178,15 @@ class TestBoostViralCro(unittest.TestCase):
             self.assertIn("function triggerPdfAndModal()", c)
             self.assertIn("window.print()", c)
             self.assertIn("openCroModal", c)
+            self.assertIn("afterprint", c, f"{fname} must listen to afterprint event")
+
+    def test_rate_calculation_triggers_modal(self):
+        for fname in ["calculator-en.html", "calculator.html"]:
+            with open(os.path.join(BASE_DIR, fname), "r", encoding="utf-8") as f:
+                c = f.read()
+            self.assertIn("triggerRateCalculationModal", c, f"{fname} must define triggerRateCalculationModal")
+            self.assertIn("hasTriggeredCalcModal", c, f"{fname} must track calc modal trigger")
+            self.assertIn("openCroModal", c, f"{fname} must call openCroModal on rate calculation")
 
     # =========================================================================
     # 4. Open Graph & Twitter Card Rich Metadata Optimization
@@ -195,6 +222,13 @@ class TestBoostViralCro(unittest.TestCase):
             local_asset_path = os.path.join(BASE_DIR, rel_path.replace("/", os.sep))
             self.assertTrue(os.path.exists(local_asset_path), f"Asset {rel_path} for {fname} must exist on disk")
 
+            # Extract twitter:image URL and verify corresponding local file exists
+            tw_img_match = re.search(r'name="twitter:image"\s+content="(https://komasan19283645\.github\.io/freelance-toolkit/([^"]+))"', content)
+            self.assertIsNotNone(tw_img_match, f"{fname} twitter:image URL format invalid")
+            tw_rel_path = tw_img_match.group(2)
+            tw_local_path = os.path.join(BASE_DIR, tw_rel_path.replace("/", os.sep))
+            self.assertTrue(os.path.exists(tw_local_path), f"Twitter asset {tw_rel_path} for {fname} must exist on disk")
+
     # =========================================================================
     # 5. Explicit Edge Cases & Boundary Handling
     # =========================================================================
@@ -209,12 +243,11 @@ class TestBoostViralCro(unittest.TestCase):
 
     def test_edge_case_no_print_suppresses_modals_and_banners(self):
         """Verify both the HN banner and the CRO modal have no-print class to prevent paper bleed."""
-        for fname in ["index-en.html", "index.html"]:
+        for fname in TARGET_PAGES:
             with open(os.path.join(BASE_DIR, fname), "r", encoding="utf-8") as f:
                 c = f.read()
             self.assertIn('id="hn-welcome-banner"', c)
             self.assertIn('no-print', c)
-            # Find the hn banner tag and confirm no-print is present
             hn_match = re.search(r'<div id="hn-welcome-banner"[^>]*class="([^"]+)"', c)
             self.assertIsNotNone(hn_match)
             self.assertIn('no-print', hn_match.group(1))
@@ -236,6 +269,13 @@ class TestBoostViralCro(unittest.TestCase):
                 c = f.read()
             self.assertIn('discount_code=LANZAMIENTO20', c, f"{fname} must carry discount_code=LANZAMIENTO20")
             self.assertIn('LANZAMIENTO20', c, f"{fname} must advertise LANZAMIENTO20")
+
+    def test_store_pages_have_lanzamiento20_badge(self):
+        """Verify store catalog pages feature the LANZAMIENTO20 discount badge."""
+        for fname in ["store.html", "store-en.html"]:
+            with open(os.path.join(BASE_DIR, fname), "r", encoding="utf-8") as f:
+                c = f.read()
+            self.assertIn("LANZAMIENTO20", c, f"{fname} must advertise LANZAMIENTO20 promo code")
 
 
 if __name__ == "__main__":

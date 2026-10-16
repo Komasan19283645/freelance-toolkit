@@ -419,6 +419,10 @@
       setTimeout(openCroModal, 1000);
     }
 
+    window.addEventListener("afterprint", () => {
+      setTimeout(openCroModal, 400);
+    });
+
     function checkHnVisitor() {
       try {
         if (localStorage.getItem("ft_hn_dismissed") === "1") return;
@@ -437,6 +441,36 @@
       try {
         localStorage.setItem("ft_hn_dismissed", "1");
       } catch (e) {}
+    }
+
+    function copyToClipboard(text, onSuccess, onFallback) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(onSuccess).catch(() => {
+          fallbackCopyText(text, onSuccess, onFallback);
+        });
+      } else {
+        fallbackCopyText(text, onSuccess, onFallback);
+      }
+    }
+
+    function fallbackCopyText(text, onSuccess, onFallback) {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        const successful = document.execCommand("copy");
+        document.body.removeChild(ta);
+        if (successful) {
+          onSuccess();
+          return;
+        }
+      } catch (err) {}
+      if (onFallback) onFallback();
+      else prompt("Copiar enlace:", text);
     }
 
     function shareToolkit(platform, context) {
@@ -461,15 +495,7 @@
       } else if (platform === "telegram") {
         window.open("https://t.me/share/url?url=" + encodeURIComponent(shareUrl) + "&text=" + encodeURIComponent(text), "_blank", "noopener,noreferrer");
       } else if (platform === "copy") {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(shareUrl).then(() => {
-            showCopyFeedback();
-          }).catch(() => {
-            prompt("Copiar enlace:", shareUrl);
-          });
-        } else {
-          prompt("Copiar enlace:", shareUrl);
-        }
+        copyToClipboard(shareUrl, showCopyFeedback, () => prompt("Copiar enlace:", shareUrl));
       }
     }
 
