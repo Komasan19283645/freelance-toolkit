@@ -217,6 +217,58 @@
           <div class="text-[11px] text-indigo-200/80 leading-relaxed bg-indigo-950/40 p-3 rounded-xl border border-indigo-800/40">
             📌 Si cobras menos de <strong id="res-hourly-pill" class="text-indigo-200 font-bold">27.35 €/h</strong>, no llegarás a tu sueldo deseado de <strong id="res-net-pill" class="text-white">2.200 €</strong> tras pagar IRPF y los gastos del negocio.
           </div>
+
+          <button type="button" onclick="openCroModal()" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2">
+            <span>🎉 ¡Tarifa calculada! Descargar Checklist Gratis + 20% Dto</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- Tarjeta Celebración y Ganchos Virales de Compartir -->
+        <div class="p-5 bg-gradient-to-br from-emerald-50 via-teal-50 to-indigo-50 border-2 border-emerald-400/80 rounded-2xl shadow-sm text-xs text-slate-800 space-y-3">
+          <div class="flex items-center gap-2 font-black text-slate-900 text-sm">
+            <span class="text-base">🎉</span> ¡Tarifa calculada! ¿Quieres la Checklist Fiscal y de Facturación 2026 + 20% de descuento en el Finance Hub?
+          </div>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Asegura la rentabilidad de tus proyectos, evita multas de Hacienda y deduce el máximo de tus gastos profesionales.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-2 pt-1">
+            <a href="https://migueldp3.gumroad.com/l/eawgaf?wanted=true&discount_code=LANZAMIENTO20" target="_blank" class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm transition-all">
+              <span>🎁 Descargar Guía Gratis (Descarga Inmediata) &rarr;</span>
+            </a>
+            <button type="button" onclick="openCroModal()" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold text-xs transition-all">
+              <span>⭐ Ver Plantillas Excel</span>
+            </button>
+          </div>
+          
+          <!-- Ganchos de compartir viral en 1 clic -->
+          <div class="pt-3 border-t border-slate-200/80">
+            <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">
+              🚀 Comparte esta calculadora con otros freelancers:
+            </p>
+            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <button type="button" onclick="shareToolkit('x', 'calc')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-black hover:bg-slate-800 text-white text-xs font-semibold shadow-xs transition" title="Compartir en X (Twitter)">
+                <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>X</span>
+              </button>
+              <button type="button" onclick="shareToolkit('linkedin', 'calc')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#0077b5] hover:bg-[#006097] text-white text-xs font-semibold shadow-xs transition" title="Compartir en LinkedIn">
+                <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.6a1.64 1.64 0 1 0 1.63 1.64A1.64 1.64 0 0 0 7.83 6.6z"/></svg>
+                <span>LinkedIn</span>
+              </button>
+              <button type="button" onclick="shareToolkit('whatsapp', 'calc')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold shadow-xs transition" title="Compartir en WhatsApp">
+                <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24h.02zm-3.6 4.3c-.2 0-.44.08-.66.32-.22.25-.85.83-.85 2.02s.87 2.34 1 2.51c.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.23-.17-.48-.29s-1.48-.73-1.71-.81c-.23-.09-.4-.13-.57.13-.17.25-.66.82-.81.99-.15.17-.3.19-.55.07-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.41.08-.17.04-.32-.02-.44-.06-.13-.57-1.37-.78-1.88-.2-.49-.41-.43-.56-.43h-.48z"/></svg>
+                <span>WhatsApp</span>
+              </button>
+              <button type="button" onclick="shareToolkit('telegram', 'calc')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#229ED9] hover:bg-[#1e8ec3] text-white text-xs font-semibold shadow-xs transition" title="Compartir en Telegram">
+                <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                <span>Telegram</span>
+              </button>
+              <button type="button" onclick="shareToolkit('copy', 'calc')" class="btn-copy-link-feedback inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-semibold transition" title="Copiar Enlace">
+                <svg class="w-3 h-3 fill-none stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span>Copiar</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Tarjeta Destacada CRO: Email Swipe File Pro -->
@@ -267,7 +319,168 @@
     </div>
   </footer>
 
+  <!-- MODAL DE CONVERSIÓN POST-CÁLCULO (CRO) -->
+  <div id="cro-upsell-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm transition-opacity no-print">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 sm:p-7 border border-slate-100 relative animate-in fade-in zoom-in-95 duration-200 max-h-[92vh] overflow-y-auto">
+      <button type="button" onclick="closeCroModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg font-bold w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors">
+        &times;
+      </button>
+
+      <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mb-3">
+        🎉
+      </div>
+
+      <h3 class="text-lg font-black text-slate-900 leading-tight">
+        🎉 ¡Tarifa calculada! ¿Quieres la Checklist Fiscal y de Facturación 2026 + 20% de descuento en el Finance Hub?
+      </h3>
+      
+      <p class="text-xs font-semibold text-indigo-600 mt-1 uppercase tracking-wide">
+        Siguiente paso para tu rentabilidad freelance
+      </p>
+
+      <p class="mt-2.5 text-xs text-slate-600 leading-relaxed">
+        Ahora que conoces tu precio mínimo, blinda tu tesorería y deduce todos tus gastos profesionales. Descarga el checklist oficial o aprovecha un 20% de descuento con el cupón <strong class="text-indigo-600 font-bold">LANZAMIENTO20</strong>.
+      </p>
+
+      <div class="p-2.5 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-center justify-between mt-3 font-semibold">
+        <span>🔥 Promo Lanzamiento: Código <strong class="underline">LANZAMIENTO20</strong></span>
+        <span class="text-emerald-700 font-bold">20% Dto Extra</span>
+      </div>
+
+      <div class="mt-3.5 space-y-2">
+        <!-- High-Converting Primary CTA: Lead Magnet (0 €) -->
+        <a href="https://migueldp3.gumroad.com/l/eawgaf?wanted=true&discount_code=LANZAMIENTO20" target="_blank" class="flex items-center justify-between w-full px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-100 transition-all hover:shadow-lg">
+          <span class="flex items-center gap-1.5">
+            <span>🎁</span>
+            <span>Descargar Guía Gratis (Descarga Inmediata)</span>
+          </span>
+          <span>&rarr;</span>
+        </a>
+
+        <!-- Commercial Upgrade: Finance Hub 2026 (9 €) -->
+        <a href="https://migueldp3.gumroad.com/l/auhouf?wanted=true&discount_code=LANZAMIENTO20" target="_blank" class="flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm transition-all">
+          <span>Freelance Finance Hub 2026 (9 €)</span>
+          <span class="text-amber-300 font-bold">20% Dto</span>
+        </a>
+
+        <!-- Commercial Upgrade: Email Swipe File Pro (9 €) -->
+        <a href="https://migueldp3.gumroad.com/l/pswllr?wanted=true&discount_code=LANZAMIENTO20" target="_blank" class="flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-sm transition-all">
+          <span>Email Swipe File Pro - 40+ Plantillas (9 €)</span>
+          <span class="text-white font-bold">Scripts &rarr;</span>
+        </a>
+
+        <!-- All-in-One Suite (39 €) -->
+        <a href="https://migueldp3.gumroad.com/l/auhouf?wanted=true&discount_code=LANZAMIENTO20" target="_blank" class="flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-sm transition-all">
+          <span>Pack Completo All-in-One (39 €) - 60% Dto</span>
+          <span class="text-amber-400">★ 8 Sistemas</span>
+        </a>
+      </div>
+
+      <!-- 1-Click Viral Social Sharing Hooks -->
+      <div class="mt-4 pt-3 border-t border-slate-100">
+        <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2 text-center">
+          🚀 Comparte FreelanceToolkit con otros profesionales:
+        </p>
+        <div class="flex items-center justify-center gap-1.5 sm:gap-2">
+          <button type="button" onclick="shareToolkit('x', 'calc')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-black hover:bg-slate-800 text-white text-xs font-semibold shadow-xs transition" title="Compartir en X (Twitter)">
+            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span>X</span>
+          </button>
+          <button type="button" onclick="shareToolkit('linkedin', 'calc')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#0077b5] hover:bg-[#006097] text-white text-xs font-semibold shadow-xs transition" title="Compartir en LinkedIn">
+            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.6a1.64 1.64 0 1 0 1.63 1.64A1.64 1.64 0 0 0 7.83 6.6z"/></svg>
+            <span>LinkedIn</span>
+          </button>
+          <button type="button" onclick="shareToolkit('whatsapp', 'calc')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold shadow-xs transition" title="Compartir en WhatsApp">
+            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24h.02zm-3.6 4.3c-.2 0-.44.08-.66.32-.22.25-.85.83-.85 2.02s.87 2.34 1 2.51c.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.23-.17-.48-.29s-1.48-.73-1.71-.81c-.23-.09-.4-.13-.57.13-.17.25-.66.82-.81.99-.15.17-.3.19-.55.07-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.41.08-.17.04-.32-.02-.44-.06-.13-.57-1.37-.78-1.88-.2-.49-.41-.43-.56-.43h-.48z"/></svg>
+            <span>WhatsApp</span>
+          </button>
+          <button type="button" onclick="shareToolkit('telegram', 'calc')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#229ED9] hover:bg-[#1e8ec3] text-white text-xs font-semibold shadow-xs transition" title="Compartir en Telegram">
+            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            <span>Telegram</span>
+          </button>
+          <button type="button" onclick="shareToolkit('copy', 'calc')" class="btn-copy-link-feedback inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition" title="Copiar Enlace">
+            <svg class="w-3 h-3 fill-none stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            <span>Copiar</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-4 text-center">
+        <button type="button" onclick="closeCroModal()" class="text-xs text-slate-400 hover:text-slate-600 font-medium">
+          No, gracias, volver a la calculadora
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script>
+    function openCroModal() {
+      const modal = document.getElementById("cro-upsell-modal");
+      if (modal) {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      }
+    }
+
+    function closeCroModal() {
+      const modal = document.getElementById("cro-upsell-modal");
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    }
+
+    function shareToolkit(platform, context) {
+      let shareUrl = window.location.href.split("#")[0].split("?")[0];
+      if (!shareUrl.startsWith("http")) {
+        shareUrl = "https://komasan19283645.github.io/freelance-toolkit/calculator.html";
+      }
+
+      const text = "Acabo de calcular mi tarifa freelance con @Komaleon37's FreelanceToolkit – 100% privado en el navegador, gratis: " + shareUrl;
+
+      if (platform === "x" || platform === "twitter") {
+        window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(text), "_blank", "noopener,noreferrer,width=600,height=400");
+      } else if (platform === "linkedin") {
+        window.open("https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(shareUrl), "_blank", "noopener,noreferrer,width=600,height=500");
+      } else if (platform === "whatsapp") {
+        window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(text), "_blank", "noopener,noreferrer");
+      } else if (platform === "telegram") {
+        window.open("https://t.me/share/url?url=" + encodeURIComponent(shareUrl) + "&text=" + encodeURIComponent(text), "_blank", "noopener,noreferrer");
+      } else if (platform === "copy") {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(shareUrl).then(() => {
+            showCopyFeedback();
+          }).catch(() => {
+            prompt("Copiar enlace:", shareUrl);
+          });
+        } else {
+          prompt("Copiar enlace:", shareUrl);
+        }
+      }
+    }
+
+    function showCopyFeedback() {
+      const btns = document.querySelectorAll(".btn-copy-link-feedback");
+      btns.forEach(btn => {
+        const originalText = btn.getAttribute("data-original") || btn.innerHTML;
+        btn.setAttribute("data-original", originalText);
+        btn.innerHTML = '✓ ¡Copiado!';
+        btn.classList.add("text-emerald-600");
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove("text-emerald-600");
+        }, 2000);
+      });
+    }
+
+    document.getElementById("cro-upsell-modal")?.addEventListener("click", function(e) {
+      if (e.target === this) closeCroModal();
+    });
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") closeCroModal();
+    });
+
     function calculate() {
       const net = parseFloat(document.getElementById("calc-desired-net").value) || 0;
       const exp = parseFloat(document.getElementById("calc-monthly-expenses").value) || 0;

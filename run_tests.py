@@ -160,6 +160,7 @@ def print_summary_table(script_results, tier_results):
         "test_tier3_combinations": "Tier 3: Pairwise Combinations",
         "test_tier4_scenarios": "Tier 4: Application Scenarios",
         "test_tier5_adversarial": "Tier 5: Adversarial Hardening",
+        "test_boost_viral_cro": "Tier 6: Virality, CRO & HN Boost",
     }
 
     for t in tier_results:
@@ -247,6 +248,7 @@ def main():
             "test_tier3_combinations",
             "test_tier4_scenarios",
             "test_tier5_adversarial",
+            "test_boost_viral_cro",
         ]
 
     print(f"[*] Running test tiers: {', '.join(tier_modules)}...")
