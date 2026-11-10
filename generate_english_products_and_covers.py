@@ -32,26 +32,31 @@ def get_font(size, bold=False):
                 pass
     return ImageFont.load_default()
 
-def draw_gradient(draw, width, height, start_color, end_color):
+def draw_gradient_rgba(draw, width, height, start_color, end_color):
     for y in range(height):
         r = int(start_color[0] + (end_color[0] - start_color[0]) * (y / height))
         g = int(start_color[1] + (end_color[1] - start_color[1]) * (y / height))
         b = int(start_color[2] + (end_color[2] - start_color[2]) * (y / height))
-        draw.line([(0, y), (width, y)], fill=(r, g, b))
+        draw.line([(0, y), (width, y)], fill=(r, g, b, 255))
 
 def create_cover_en(filename, bg_start, bg_end, accent_color, category_tag, title, subtitle, bullets, badge_text="2026 EDITION"):
     W, H = 1280, 720
-    img = Image.new("RGB", (W, H))
-    draw = ImageDraw.Draw(img)
+    base = Image.new("RGBA", (W, H))
+    draw_base = ImageDraw.Draw(base)
 
     # 1. Background gradient
-    draw_gradient(draw, W, H, bg_start, bg_end)
+    draw_gradient_rgba(draw_base, W, H, bg_start, bg_end)
 
-    # 2. Subtle grid lines
+    # 2. Subtle grid lines with alpha composite
+    grid_overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw_grid = ImageDraw.Draw(grid_overlay)
     for x in range(0, W, 40):
-        draw.line([(x, 0), (x, H)], fill=(255, 255, 255, 15), width=1)
+        draw_grid.line([(x, 0), (x, H)], fill=(255, 255, 255, 14), width=1)
     for y in range(0, H, 40):
-        draw.line([(0, y), (W, y)], fill=(255, 255, 255, 15), width=1)
+        draw_grid.line([(0, y), (W, y)], fill=(255, 255, 255, 14), width=1)
+
+    img = Image.alpha_composite(base, grid_overlay).convert("RGB")
+    draw = ImageDraw.Draw(img)
 
     # 3. Glassmorphism central card
     card_margin_x = 80
@@ -72,8 +77,11 @@ def create_cover_en(filename, bg_start, bg_end, accent_color, category_tag, titl
 
     # 4. Top Category Tag
     font_badge = get_font(18, bold=True)
-    draw.rounded_rectangle([(card_margin_x + 50, card_margin_y + 50), (card_margin_x + 300, card_margin_y + 90)], radius=12, fill=accent_color)
-    draw.text((card_margin_x + 65, card_margin_y + 58), category_tag, font=font_badge, fill=(255, 255, 255))
+    cat_bbox = font_badge.getbbox(category_tag)
+    cat_w = cat_bbox[2] - cat_bbox[0]
+    cat_badge_w = max(230, cat_w + 32)
+    draw.rounded_rectangle([(card_margin_x + 50, card_margin_y + 50), (card_margin_x + 50 + cat_badge_w, card_margin_y + 90)], radius=12, fill=accent_color)
+    draw.text((card_margin_x + 66, card_margin_y + 58), category_tag, font=font_badge, fill=(255, 255, 255))
 
     # Badge Top Right
     draw.rounded_rectangle([(card_margin_x + card_w - 200, card_margin_y + 50), (card_margin_x + card_w - 50, card_margin_y + 90)], radius=12, fill=(31, 41, 55), outline=(75, 85, 99), width=1)
